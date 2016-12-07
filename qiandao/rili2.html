@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta charset="UTF-8">
+    <title>签到</title>
+    <link rel="stylesheet" href="css/rili2.css">
+
+</head>
+
+<body>
+    <div class="qiandao-warp">
+        <div class="qiandap-box">
+            <div class="qiandao-banner">
+                <img src="images/bg_02.png" style="width: 100%;">
+            </div>
+            <div class="qiandao-use">
+                    <img src="images/ue.png">
+                <div class="userInfo">
+                    <p class="username">-小白</p>
+                    <p class="day">已连续签到<b>1</b>天</p>
+                </div>
+                <div class="regular">签到规则</div>
+            </div>
+            <div class="qian">
+                <img src="images/qiy_03.png">
+                <p>今天<b>310</b>人已签到</p>
+            </div>
+            <div class="qiandao-con clear">
+                 <div class="qiandao-left-top clear">
+                       
+                        <div class="current-date">2016年6月</div>                        
+                </div>
+                 <div class="qiandao-main" id="js-qiandao-main">
+                      <ul id="js-qiandao-list" class="days clearfix">
+                        
+                    </ul>
+                        
+                </div>
+            </div>
+        </div>
+        <div class="qian_list">
+        <marquee direction="up" behavior="scroll" scrollamount="1" scrolldelay="0" loop="-1"  hspace="10" vspace="10" width="1000" height="50">
+        <div class="marq">
+            <img src="images/ue.png">
+            <div class="qiandao_name">
+                <h1>苗苗</h1>
+                <p>签到成功：获得10积分</p>
+            </div> 
+        </div>
+           <div class="marq">
+            <img src="images/ues_03.png">
+            <div class="qiandao_name">
+                <h1>苗苗</h1>
+                <p>签到成功：获得10积分</p>
+            </div> 
+        </div>  
+        </marquee>
+            
+        </div>
+        <footer>
+            <a href="#" class="qian_btn" id="js-just-qiandao">立即签到</a>
+            <a href="#" class="alqian">已签到</a>
+        </footer>
+    </div>
+    <div class="dialog" id="dialog1">
+        <div class="mask">
+            <img src="images/gu_03.png">
+            <span>x</span>
+            <div class="dialog_main">
+                <p class="everyday">每日签到，才是真爱！</p>
+                <p class="everyday_list">1、连续签到1天，获得10积分奖励</p>
+                <p class="everyday_list">2、连续签到7天，获得50积分奖励</p>
+                <p class="everyday_st">中途未签到，则连续天数归0，重新计算</p>
+                <p class="know">知道了</p>
+            </div>
+        </div>
+    </div>
+     <div class="dialog" id="dialog2">
+        <div class="mask1" id="mask1">
+            <img src="images/cg_02.png">
+            <span>x</span>
+            <div class="dialog_main">
+                <p class="everyday_list">您今天已获得的奖励如下：</p>
+                <ul>
+                    <li>10积分</li>
+                </ul>
+                <p class="everyday_list">再连续签到<b>6</b>天，就能获得：</p>
+                <ul>
+                    <li>50积分</li>
+                </ul>
+              <div class="btn">
+                   <a href="#" class="know1">知道了</a>
+                    <a href="#" class="go">进店逛逛</a>
+              </div>             
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/qiaodao_js.js"></script>
+
+    <script>
+    $(function(){
+        $('.regular').click(function(){
+            $('#dialog1').fadeIn();
+        });
+        $('.know').click(function(){
+            $('#dialog1').fadeOut();
+        });
+        $('.mask span').click(function(){
+            $('.dialog').fadeOut();
+        });
+        $('#dialog1').click(function(){
+            $(this).fadeOut();
+        });
+
+
+
+        $('.qian_btn').click(function(){
+            $('#dialog2').fadeIn();
+        });
+        $('.know1').click(function(){
+            $('#dialog2').fadeOut();
+        });
+         $('.dialog').click(function(){
+            $(this).fadeOut();
+        });
+         $('.qian_btn').click(function(){
+            $('.alqian').css('display','block');
+        });
+          $('.mask1 span').click(function(){
+            $('.dialog').fadeOut();
+        });
+
+          $('#mask1').click(function(event){
+            event.stopPropagation();
+         });
+
+          $('#js-just-qiandao').click(function(){
+            $('.able-qiandao').addClass('qiandao');
+          });
+    });
+    </script>
+</body>
+</html>
